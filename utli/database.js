@@ -1,8 +1,13 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("new_schema", "root", "nandhu11*8", {
-  dialect: "mysql",
-  host: "localhost",
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.NAME,
+  process.env.PASSWORD,
+  {
+    dialect: "mysql",
+    host: "localhost",
+  }
+);
 
 module.exports = sequelize;

@@ -1,5 +1,6 @@
 const express = require("express");
 
+require("dotenv").config();
 const app = express();
 const cors = require("cors");
 const ExpenseRouter = require("./router/product");
@@ -17,7 +18,7 @@ app.use(bodyParser.json({ extended: false }));
 //   next();
 // });
 app.use(ExpenseRouter);
-
+console.log(process.env.PORT);
 sequelize
   // .sync({ force: true })
   .sync()
